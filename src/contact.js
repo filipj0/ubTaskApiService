@@ -10,10 +10,10 @@ createRouter = () => {
 
         let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!emailRegex.test(email)) {
-            res.status(500).json({errorCode: 'INVALID_EMAIL_ADDRESS'});
+            res.status(422).json({errorCode: 'INVALID_EMAIL_ADDRESS'});
         }
         else if (message.length < 30) {
-            res.status(500).json({errorCode: 'MESSAGE_TOO_SHORT'});
+            res.status(422).json({errorCode: 'MESSAGE_TOO_SHORT'});
         }
         else {
             res.status(200).json({errorCode: ''});
